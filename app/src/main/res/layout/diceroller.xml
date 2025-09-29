@@ -6,14 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Title -->
+
     <LinearLayout
         android:id="@+id/nav"
         android:layout_width="164dp"
         android:layout_height="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -35,13 +37,11 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <!-- Title -->
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="48dp"
         android:text="Dice Roller"
         android:textColor="@android:color/black"
         android:textSize="24sp"
@@ -58,9 +58,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/diceContainer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.027">
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/button1"
@@ -90,15 +91,16 @@
             android:text="4" />
     </LinearLayout>
 
+    <!-- Roll Button -->
     <LinearLayout
         android:id="@+id/diceContainer"
-        android:layout_width="290dp"
-        android:layout_height="290dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="76dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -155,15 +157,15 @@
         android:id="@+id/rollResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Please tap the button..."
-        android:textSize="20sp"
         android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diceContainer" />
 
-    <!-- Roll Button -->
     <Button
         android:id="@+id/rollButton"
         android:layout_width="wrap_content"
@@ -174,7 +176,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollResult"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.058" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

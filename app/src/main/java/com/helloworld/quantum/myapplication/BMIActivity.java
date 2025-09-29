@@ -1,5 +1,6 @@
 package com.helloworld.quantum.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,27 @@ public class BMIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bmi);
 
+        // ✅ Navigation
+        TextView navDiceRoller = findViewById(R.id.navDiceRoller);
+        TextView navBMI = findViewById(R.id.navBMI);
+
+        navDiceRoller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BMIActivity.this, DiceRollerActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        navBMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // already here, do nothing
+            }
+        });
+
+        // ✅ Button for BMI
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,4 +89,3 @@ public class BMIActivity extends AppCompatActivity {
         BMICategory.setText(BMI_Cat);
     }
 }
-

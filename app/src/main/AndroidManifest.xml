@@ -24,6 +24,10 @@
         <activity android:name=".BMIActivity"
             tools:ignore="Instantiatable" />
 
+        <!-- BMI Activity -->
+        <activity android:name=".DiceRollerActivity"
+            tools:ignore="Instantiatable" />
+
     </application>
 
 </manifest>

@@ -29,10 +29,6 @@ public class DiceRollerActivity extends AppCompatActivity {
             R.drawable.dice6
     };
 
-    int[] diceColors = {
-            Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, Color.MAGENTA, Color.CYAN
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,13 +129,9 @@ public class DiceRollerActivity extends AppCompatActivity {
         int sum = 0;
         StringBuilder resultText = new StringBuilder("You rolled: ");
 
-        // One random color per roll
-        int randomColor = diceColors[rand.nextInt(diceColors.length)];
-
         for (int i = 0; i < diceCount; i++) {
             int roll = rand.nextInt(6); // 0–5
             diceImages[i].setImageResource(diceDrawables[roll]);
-            diceImages[i].setColorFilter(randomColor);
 
             int value = roll + 1;
             sum += value;
