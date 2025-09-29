@@ -2,6 +2,8 @@ package com.helloworld.quantum.myapplication;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import java.util.Random;
 
@@ -27,6 +30,11 @@ public class DiceRollerActivity extends AppCompatActivity {
             R.drawable.dice4,
             R.drawable.dice5,
             R.drawable.dice6
+    };
+
+    int[] colors = {
+            Color.RED, Color.BLUE, Color.GREEN,
+            Color.YELLOW, Color.MAGENTA, Color.CYAN
     };
 
     @Override
@@ -132,6 +140,18 @@ public class DiceRollerActivity extends AppCompatActivity {
         for (int i = 0; i < diceCount; i++) {
             int roll = rand.nextInt(6); // 0–5
             diceImages[i].setImageResource(diceDrawables[roll]);
+
+            // pick a random color for this dice
+            int color = colors[rand.nextInt(colors.length)];
+
+            // get the drawable we just set
+            Drawable drawable = diceImages[i].getDrawable();
+
+            if (drawable instanceof VectorDrawableCompat) {
+                ((VectorDrawableCompat) drawable).setTint(color);
+            } else if (drawable instanceof VectorDrawable) {
+                ((VectorDrawable) drawable).setTint(color);
+            }
 
             int value = roll + 1;
             sum += value;
