@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
@@ -137,9 +140,13 @@ public class DiceRollerActivity extends AppCompatActivity {
         int sum = 0;
         StringBuilder resultText = new StringBuilder("You rolled: ");
 
+        Animation rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
+
         for (int i = 0; i < diceCount; i++) {
             int roll = rand.nextInt(6); // 0–5
             diceImages[i].setImageResource(diceDrawables[roll]);
+
+            diceImages[i].startAnimation(rotate);
 
             // pick a random color for this dice
             int color = colors[rand.nextInt(colors.length)];
